@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard for visualizing satellite observed fire occurrences</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            position: relative; /* Added to make positioning of view count relative to body */
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .view-count {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dashboard for visualizing satellite observed fire occurrences</h1>
+    </header>
+    <main>
+        <h2>Welcome, here I have provided few interactive plots to visualize the VIIRS detected fire spots over the Indian subcontinent.</h2>
+        <p>Total fire counts timeseries for Indian states and UTs.</p>
+        <p>For more detailed information about active fire products visit official webpage <a href="https://www.earthdata.nasa.gov/learn/find-data/near-real-time/firms/viirs-i-band-375-m-active-fire-data">here</a>.</p>
+    </main>
+    <footer>
+        <p xmlns:cc="http://creativecommons.org/ns#" >This work by <span property="cc:attributionName">Abhinav Sharma</span> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
+    </footer>
+
+    <!-- View Count -->
+    <div class="view-count">
+        Views: <span id="viewCount">0</span>
+    </div>
+
+    <script>
+        // Increment view count
+        let viewCount = localStorage.getItem('viewCount') || 0;
+        viewCount++;
+        localStorage.setItem('viewCount', viewCount);
+        document.getElementById('viewCount').textContent = viewCount;
+    </script>
+</body>
+</html>
